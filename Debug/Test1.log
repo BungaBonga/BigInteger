@@ -1,4 +1,0 @@
-﻿  Test.cpp
-C:\Users\1\source\repos\Test1\Test.cpp(92,6): warning C4305: аргумент: усечение из "__int64" в "int"
-C:\Users\1\source\repos\Test1\Test.cpp(92,18): warning C4309: аргумент: усечение константного значения
-  Test1.vcxproj -> C:\Users\1\source\repos\Test1\Debug\Test1.exe
