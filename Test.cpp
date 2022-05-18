@@ -312,7 +312,23 @@ int main() {
 		std::cout << "Test31 failed" << std::endl;
 	}
 	std::cout << "Test31 passed" << std::endl;
+
+	try {
+		t < p;
+	}
+	catch (...) {
+		std::cout << "Test32 failed" << std::endl;
+	}
+	std::cout << "Test32 passed" << std::endl;
 	
+	try {
+		BigInteger("12364236546154183769876523487612").toString();
+	}
+	catch (...) {
+		std::cout << "Test33 failed" << std::endl;
+	}
+	std::cout << "Test33 passed" << std::endl;
+
 	delete b1;
 	delete b2;
 }

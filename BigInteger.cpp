@@ -322,7 +322,7 @@ BigInteger BigInteger::operator--(int) {
 	return copy;
 }
 
-//-------------------------ÂÂÎÄ È ÂÛÂÎÄ-------------------------------------------------------------------------------
+//-------------------------ÂÛÂÎÄ-------------------------------------------------------------------------------
 std::ostream& operator <<(std::ostream& out, const BigInteger& b) {
 	if (b.digits.size() == 0) out << 0;
 	else {
@@ -331,33 +331,4 @@ std::ostream& operator <<(std::ostream& out, const BigInteger& b) {
 	}
 	return out;
 }
-/*std::istream& operator >>(std::istream& in, BigInteger& b) {
-	char c;
-	std::string str;
-	while (in.read(&c, 1)) {
-		if (c == ' ' || c == '\0' || c == '\n') break;
-		str += c;
-	}
-	b.digits.clear();
-	if (str.length() == 0)
-		b.sign = false;
-	else
-	{
-		if (str[0] == '-') {
-			b.sign = true;
-			str = str.substr(1);
-		}
-		else b.sign = false;
-		for (int i = str.length(); i > 0; i -= static_cast<int>(log10(b.base))) {
-			if (i < static_cast<int>(log10(b.base)))
-				b.digits.push_back(atoi(str.substr(0, i).c_str()));
-			else
-				b.digits.push_back(atoi(str.substr(i - static_cast<int>(log10(b.base)), static_cast<int>(log10(b.base))).c_str()));
-		}
-	}
-	while (b.digits.size() > 1 && b.digits.back() == 0) {
-		b.digits.pop_back();
-	}
-	if (b.digits.size() == 1 && b.digits[0] == 0) b.sign = false;
-	return in;
-}*/
+
