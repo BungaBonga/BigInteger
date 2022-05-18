@@ -297,6 +297,22 @@ int main() {
 		std::cout << "Test29 failed" << std::endl;
 	}
 
+	try {
+		t.get_r();
+	}
+	catch (...) {
+		std::cout << "Test30 failed" << std::endl;
+	}
+	std::cout << "Test30 passed" << std::endl;
+
+	try {
+		t -= p;
+	}
+	catch (...) {
+		std::cout << "Test31 failed" << std::endl;
+	}
+	std::cout << "Test31 passed" << std::endl;
+	
 	delete b1;
 	delete b2;
 }
