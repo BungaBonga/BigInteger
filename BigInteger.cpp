@@ -44,7 +44,7 @@ BigInteger::BigInteger(std::string s) {
 				throw EINVARG;
 			}
 		}
-		for (long long i = s.length(); i > 0; i -= static_cast<int>(log10(base))) {
+		for (int i = s.length(); i > 0; i -= static_cast<int>(log10(base))) {
 			if (i < static_cast<int>(log10(base)))
 				this->digits.push_back(atoi(s.substr(0, i).c_str()));
 			else
@@ -348,7 +348,7 @@ std::istream& operator >>(std::istream& in, BigInteger& b) {
 			str = str.substr(1);
 		}
 		else b.sign = false;
-		for (long long i = str.length(); i > 0; i -= static_cast<int>(log10(b.base))) {
+		for (int i = str.length(); i > 0; i -= static_cast<int>(log10(b.base))) {
 			if (i < static_cast<int>(log10(b.base)))
 				b.digits.push_back(atoi(str.substr(0, i).c_str()));
 			else

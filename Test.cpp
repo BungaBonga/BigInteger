@@ -89,7 +89,7 @@ int main() {
 	std::cout << *b2 << std::endl;
 
 	try {
-		if (BigInteger(100000000000) != BigInteger("100000000000")) {
+		if (BigInteger(10000000) != BigInteger("100000000000")) {
 			std::cout << "Test10 passed" << std::endl;
 		}
 	}
