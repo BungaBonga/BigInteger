@@ -331,7 +331,7 @@ std::ostream& operator <<(std::ostream& out, const BigInteger& b) {
 	}
 	return out;
 }
-std::istream& operator >>(std::istream& in, BigInteger& b) {
+/*std::istream& operator >>(std::istream& in, BigInteger& b) {
 	char c;
 	std::string str;
 	while (in.read(&c, 1)) {
@@ -360,6 +360,4 @@ std::istream& operator >>(std::istream& in, BigInteger& b) {
 	}
 	if (b.digits.size() == 1 && b.digits[0] == 0) b.sign = false;
 	return in;
-}
-
-//------------------------------------------------------------------------------------------------------
+}*/

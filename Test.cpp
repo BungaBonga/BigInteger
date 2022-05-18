@@ -125,7 +125,7 @@ int main() {
 	else { std::cout << "Test12 failed" << std::endl; }
 
 	try {
-		*b1 /= "string"; //��� ��������� ��������� ������������ ����� ����� ��
+		*b1 /= "string"; 
 	}
 	catch (const BigInteger::big_int_error& ex) {
 		if (ex == BigInteger::EINVARG) {
@@ -140,7 +140,7 @@ int main() {
 	}
 
 	try {
-		*b1 / "string"; //��� ��������� �������� �������� ����� ����� ��
+		*b1 / "string"; 
 	}
 	catch (const BigInteger::big_int_error& ex) {
 		if (ex == BigInteger::EINVARG) {
@@ -200,8 +200,103 @@ int main() {
 	catch (...) {
 		std::cout << "Test19 failed" << std::endl;
 	}
+
+	try {
+		*b1 *= "string"; 
+	}
+	catch (const BigInteger::big_int_error& ex) {
+		if (ex == BigInteger::EINVARG) {
+			std::cout << "Test20 passed" << std::endl;
+		}
+		else {
+			std::cout << "Test20 failed" << std::endl;
+		}
+	}
+	catch (...) {
+		std::cout << "Test20 failed" << std::endl;
+	}
+
+	try {
+		if ((p -= t) == 0) {
+			std::cout << "Test21 passed" << std::endl;
+		}
+	}
+	catch (...) {
+		std::cout << "Test21 failed" << std::endl;
+	}
+
+	try {
+		if ((p += t) > 0) {
+			std::cout << "Test22 passed" << std::endl;
+		}
+	}
+	catch (...) {
+		std::cout << "Test22 failed" << std::endl;
+	}
+
+	try {
+		if ((p /= t) >= 0) {
+			std::cout << "Test23 passed" << std::endl;
+		}
+	}
+	catch (...) {
+		std::cout << "Test23 failed" << std::endl;
+	}
+
+	try {
+		if ((p *= t) <= t) {
+			std::cout << "Test24 passed" << std::endl;
+		}
+	}
+	catch (...) {
+		std::cout << "Test24 failed" << std::endl;
+	}
+
+	try {
+		if (p + t == t * 2) {
+			std::cout << "Test25 passed" << std::endl;
+		}
+	}
+	catch (...) {
+		std::cout << "Test25 failed" << std::endl;
+	}
+	
+	try {
+		if (p - t == 0) {
+			std::cout << "Test26 passed" << std::endl;
+		}
+	}
+	catch (...) {
+		std::cout << "Test26 failed" << std::endl;
+	}
+
+	try {
+		if (p * t != 0) {
+			std::cout << "Test27 passed" << std::endl;
+		}
+	}
+	catch (...) {
+		std::cout << "Test27 failed" << std::endl;
+	}
+
+	try {
+		if (p % t == 0) {
+			std::cout << "Test28 passed" << std::endl;
+		}
+	}
+	catch (...) {
+		std::cout << "Test28 failed" << std::endl;
+	}
+
+	try {
+		if ((t %= p) >= 0) {
+			std::cout << "Test29 passed" << std::endl;
+		}
+	}
+	catch (...) {
+		std::cout << "Test29 failed" << std::endl;
+	}
+
 	delete b1;
 	delete b2;
-	p.~BigInteger();
-	t.~BigInteger();
 }
